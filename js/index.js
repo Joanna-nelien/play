@@ -129,12 +129,12 @@ if (heigth >= 150) {
     console.log(true);
 } else {
     console.log(false);
-}*/
+}
 
 let heigth = prompt("Skriv in din längd i cm?");
 let weigth = prompt("Skriv in din vikt i kg?");
 
-let bmi = weigth / ((heigth / 100) ** 2);
+const bmi = weigth / ((heigth / 100) ** 2);
 
 let roundedBmi = Math.round(bmi);
 console.log("Ditt BMI är: " + roundedBmi);
@@ -150,3 +150,17 @@ if (roundedBmi < 18.5) {
 } else {
     console.log("Ogiltigt BMI");
 }
+
+function countLength(text) {
+    return text.length;
+}
+ let minString = "Hej Joanna";
+ console.log("Strängen är: " + minString);
+console.log("Längden på strängen är: " + countLength(minString));*/
+
+function countLength(text) {
+    return text.length;
+}
+ let text= "Hej Joanna"; 
+ console.log("Strängen är: " + text); 
+console.log("Längden på strängen är: " + countLength(text));
