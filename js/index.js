@@ -338,16 +338,28 @@ console.log("Du valde: " + userChoice);
 console.log("Datorn valde: " + computerChoice);
 
 determineWinner()*/
-
+/*
 let todos = [];
-const buttonElem = document.querySelector("add-todo-button"); //söker i webbsidan
+const buttonElem = document.querySelector("#add-todo-button"); //söker i webbsidan
 console.log(buttonElem);
 
 buttonElem.addEventListener("click", () => {
-
     const todo = prompt ("Vad vill du göra");
 
     todos.push(todo);
-
     console.log(todos);
-});
+});*/
+
+function countOverTen(arr) {
+
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countOverTen([5, 12, 8, 15, 20])); // Output: 3
