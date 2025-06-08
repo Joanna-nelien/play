@@ -213,25 +213,32 @@ function berakna(tal1, tal2, operator) {
 
 console.log("Resultatet är: " + berakna(Number(number), Number(number2), operator));
 ---------------------------------------------------------------------------
-
-*/
+ function selectComputerWeapon() {
+    const randomNumber = Math.floor(Math.random() * 3);
+    console.log(randomNumber);
+    if (randomNumber === 0) {
+        computerChoice = "sten";
+    } else if (randomNumber === 1) {
+        computerChoice = "sax";
+    } else {
+        computerChoice = "påse";
+    }
+ }
+----------------------------------------------------------------------------
  document.getElementById("myButton").addEventListener("click", function() {
         document.getElementById("message").innerText = "nytt spel!";
     });
-/*
 // Funktion som slumpar datorns val
 function slumpaDatorVal() {
     let val = ["sten", "sax", "påse"];
     let index = Math.floor(Math.random() * val.length);
     return val[index];
 }
-*/
 
 // Spelare 1 väljer
 let spelare1 = prompt("Spelare 1, välj sten, sax eller påse:").toLowerCase();
 console.log("Spelare 1 valde: " + spelare1);
 
-/*
 // Datorn gör sitt val
 let dator = slumpaDatorVal();
 console.log("Datorn valde: " + dator);
@@ -257,48 +264,90 @@ document.getElementById("message").innerText =
         "Du valde: " + spelarensVal + "\n" +
         "Datorn valde: " + datornsVal + "\n" +
         "Resultat: " + resultat;
-}*/
+----------------------------------------------------------------------------
+        
+ // Rock, Paper, Scissors Game
 
-document.getElementById("myButton").addEventListener("click", function() {
-    startaSpel();
-});
+/**
+ * Prompt for user
+ * set variabel to userChoice
+ * Select random
+ * set variabel to computerChoice
+ * Determine winner
+ * Display result
+ 
+function determineWinner() {
 
-function slumpaDatorVal() {
-    let val = ["sten", "sax", "påse"];
-    let index = Math.floor(Math.random() * val.length);
-    return val[index];
-}
-
-function avgörVinnare(spelare, dator) {
-    if (spelare === dator) {
-        return "Det blev oavgjort!";
-    } else if (
-        (spelare === "sten" && dator === "sax") ||
-        (spelare === "sax" && dator === "påse") ||
-        (spelare === "påse" && dator === "sten")
-    ) {
-        return "Spelare 1 vinner!";
-    } else if (
-        (dator === "sten" && spelare === "sax") ||
-        (dator === "sax" && spelare === "påse") ||
-        (dator === "påse" && spelare === "sten")
-    ) {
-        return "Datorn vinner!";
-    } else {
-        return "Ogiltigt val! Välj mellan sten, sax eller påse.";
+ if (userChoice === "sten") {
+    if (computerChoice === "sten") {
+        console.log("Oavgjort!");
+    } else if (computerChoice === "sax") {
+        console.log("Du vinner!");
+    } else if (computerChoice === "påse") {
+        console.log("Datorn vinner!");
     }
+ } else if (userChoice === "sax") {
+    if (computerChoice === "sax") {
+        console.log("Oavgjort!");
+    } else if (computerChoice === "påse") {
+        console.log("Du vinner!");
+    }   else if (computerChoice === "sten") {
+        console.log("Datorn vinner!");
+    }
+ } else if (userChoice === "påse") {
+    if (computerChoice === "påse") {
+        console.log("Oavgjort!");
+    } else if (computerChoice === "sten") {
+        console.log("Du vinner!");
+    } else if (computerChoice === "sax") {
+        console.log("Datorn vinner!");
+    }
+ }
+
 }
 
-function startaSpel() {
-    let spelare1 = prompt("Spelare 1, välj sten, sax eller påse:").toLowerCase();
-    let dator = slumpaDatorVal();
-    let resultat = avgörVinnare(spelare1, dator);
+const userChoice = prompt("Välj sten, sax eller påse:").toLowerCase();
 
-    document.getElementById("message").innerText =
-        "Du valde: " + spelare1 + "\n" +
-        "Datorn valde: " + dator + "\n" +
-        resultat;
-}
-document.getElementById("myButton").addEventListener("click", function() {
-    startaSpel();
+  function selectComputerWeapon() {
+    const randomNumber = Math.floor(Math.random() * 3);
+    console.log(randomNumber);
+    if (randomNumber === 0) {
+        computerChoice = "sten";
+    } else if (randomNumber === 1) {
+        computerChoice = "sax";
+    } else {
+        computerChoice = "påse";
+    }
+ }
+
+ function selectComputerWeapon() {
+    const randomNumber = Math.floor(Math.random() * 3);
+   
+    if (randomNumber === 0) {
+        return "sten";
+    } else if (randomNumber === 1) {
+        return "sax";
+    } else {
+        return "påse";
+    }
+ }
+
+ let computerChoice = selectComputerWeapon();
+
+console.log("Du valde: " + userChoice);
+console.log("Datorn valde: " + computerChoice);
+
+determineWinner()*/
+
+let todos = [];
+const buttonElem = document.querySelector("add-todo-button"); //söker i webbsidan
+console.log(buttonElem);
+
+buttonElem.addEventListener("click", () => {
+
+    const todo = prompt ("Vad vill du göra");
+
+    todos.push(todo);
+
+    console.log(todos);
 });
