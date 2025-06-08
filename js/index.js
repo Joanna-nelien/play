@@ -343,18 +343,20 @@ let todos = [];
 const buttonElem = document.querySelector("#add-todo-button"); //söker i webbsidan
 console.log(buttonElem);
 
-function displayTodos() {}
+function displayTodos() {
 
-    for (let i = 0; i < 5; i++) {
-        console.log("i är:  ", i);
+    for (let i = 0; i < todos.length; i++) {
+        console.log("Todo nr", i);
+        console.log("Todo", todos[i]);
     }
-
+}
 
 buttonElem.addEventListener("click", () => {
     const todo = prompt ("Vad vill du göra");
 
     todos.push(todo);
-    console.log(todos);
+
+    displayTodos();
 });
 
 /*
